@@ -9,9 +9,33 @@
 </head>
 <body>
   <h1>🏔 To-Do list:</h1>
-  <button id='displayButton'>Display To-Do's</button>
-  <button id='toggleAllButton'>Toggle all</button>
+
+  <div class="toggleSection">
+    <button id='displayButton'>Display To-Do's</button>
+    <button id='toggleAllButton'>Toggle all</button>
+  </div>
+
+  <div class="addSection">
+    <button id="addTodoButton">Add</button>
+    <input id="addTodoInput" type="text">
+  </div>
   
+  <div class="changeSection">
+    <button id="changeTodoButton">Change</button>
+    <input id="changeTodoPosition" type="number">
+    <input id="changeTodoInput" type="text">
+  </div>
+
+  <div class="deleteSection">
+    <button id="deleteTodoButton">Delete</button>
+    <input id="deleteTodoPosition" type="number">
+  </div>
+
+  <div class="toggleSection">
+    <button id="toggleTodoButton">Toggle Completed</button>
+    <input id="toggleTodoPosition" type="number">
+  </div>
+
   <script src="todo_app.js"></script>
 </body>
 </html>

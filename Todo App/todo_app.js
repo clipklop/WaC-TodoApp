@@ -12,6 +12,7 @@ const todoList = {
       completed: false,
     });
     this.displayTodos();
+    displayTodos()
   },
   displayTodos() {
     if (this.todos.length === 0) {
@@ -123,5 +124,23 @@ const toggleTodo = () => {
 toggleTodoButton.addEventListener('click', toggleTodo);
 
 
+// View
+const displayTodos = () => {
+  if (todoList.todos.length === 0) {
+  } else {
+    const todosUl = document.querySelector('.todoList');
+    todosUl.innerHTML = '';
+
+    todoList.todos.forEach(todo => {  
+      const todosLi = document.createElement('li');
+      todosLi.textContent = todo.todoText;
+      todosUl.appendChild(todosLi);
+      todo.completed ? console.log(`(x) ${todo.todoText}`)
+        : console.log(`( ) ${todo.todoText}`)
+    });
+  }
+}
+
+displayTodos()
 // Module exporting for NodeJS
 // module.exports = todoList;

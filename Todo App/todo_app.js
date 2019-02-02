@@ -43,6 +43,7 @@ const todoList = {
     let todo = this.todos[position];
     todo.completed = !todo.completed;
     this.displayTodos();
+    displayTodos()
   },
   toggleAll() {
     let totalTodos = this.todos.length;
@@ -64,6 +65,7 @@ const todoList = {
       }
     }
     this.displayTodos();
+    displayTodos()
   },
 };
 
@@ -126,17 +128,25 @@ toggleTodoButton.addEventListener('click', toggleTodo);
 
 // View
 const displayTodos = () => {
-  if (todoList.todos.length === 0) {
-  } else {
-    const todosUl = document.querySelector('.todoList');
-    todosUl.innerHTML = '';
+  const todosUl = document.querySelector('.todoList');
+  let todosLi = document.createElement('li');
 
+  if (todoList.todos.length === 0) { 
+    todosLi.textContent = 'The list is empty.';
+    todosUl.appendChild(todosLi);
+  } else {
+
+    todosUl.innerHTML = '';
+    
     todoList.todos.forEach(todo => {  
-      const todosLi = document.createElement('li');
-      todosLi.textContent = todo.todoText;
+      todosLi = document.createElement('li');
+      let todoTextWithCompletion = '';
+
+      todo.completed ? todoTextWithCompletion = `(x) ${todo.todoText}`
+        : todoTextWithCompletion = `( ) ${todo.todoText}`
+
+      todosLi.textContent = todoTextWithCompletion;
       todosUl.appendChild(todosLi);
-      todo.completed ? console.log(`(x) ${todo.todoText}`)
-        : console.log(`( ) ${todo.todoText}`)
     });
   }
 }

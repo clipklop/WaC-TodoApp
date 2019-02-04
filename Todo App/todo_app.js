@@ -109,7 +109,7 @@ toggleTodoButton.addEventListener('click', toggleTodo);
 
 // View
 const displayTodos = () => {
-  const todosUl = document.querySelector('.todoList');  
+  const todosUl = document.querySelector('#todo-list');  
   let todosLi = document.createElement('li');
 
   if (todoList.todos.length === 0) { 

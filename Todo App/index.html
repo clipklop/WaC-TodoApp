@@ -4,37 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
+  <link rel="stylesheet" href="style.css">
   <title>To-Do App 🤙 </title>
 </head>
 <body>
-  <h1>🏔 To-Do list:</h1>
+  <section id="todoapp">
+    <h1>🏔 To-Do list:</h1>
 
-  <div class="toggleSection">
-    <button id='displayHideButton'>Display/Hide To-Do's</button>
-    <button id='toggleAllButton'>Toggle all</button>
-  </div>
+    <header id="header">
+      <button id='displayHideButton'>Display/Hide To-Do's</button>
+      <button id='toggleAllButton'>Toggle all</button>
+    </header>
+    
+      <div class="changeSection"></div>
+        <button id="addTodoButton">Add</button>
+        <input id="addTodoInput" type="text" placeholder="What needs to be done?">
+      </div>
 
-  <div class="addSection">
-    <button id="addTodoButton">Add</button>
-    <input id="addTodoInput" type="text">
-  </div>
-  
-  <div class="changeSection">
-    <button id="changeTodoButton">Change</button>
-    <input id="changeTodoPosition" type="number">
-    <input id="changeTodoInput" type="text">
-  </div>
+      <div class="changeSection">
+        <button id="changeTodoButton">Change</button>
+        <input id="changeTodoPosition" type="number" placeholder="0">
+        <input id="changeTodoInput" type="text" placeholder="What needs to be changed?">
+      </div>
 
-  <div class="toggleSection">
-    <button id="toggleTodoButton">Toggle Completed</button>
-    <input id="toggleTodoPosition" type="number">
-  </div>
+      <div class="toggleSection">
+        <button id="toggleTodoButton">Toggle Completed</button>
+        <input id="toggleTodoPosition" type="number" placeholder="0">
+      </div>
 
-  <div class="viewSection">
-    <ul class="todoList"></ul>
-  </div>
+    <section id="main">
+      <div class="viewSection">
+        <ul id="todo-list"></ul>
+      </div>
 
+    </section>
+  </section>
   <script src="todo_app.js"></script>
 </body>
 </html>
